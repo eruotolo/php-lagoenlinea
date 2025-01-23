@@ -1,0 +1,67 @@
+version: "3.8"
+
+networks:
+    my-network:
+        driver: bridge
+
+services:
+    mysql:
+        image: mariadb:10.1.48
+        container_name: mariadb-lago
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            #MYSQL_USER: root
+            MARIADB_DATABASE: lagoenli_lago
+            MYSQL_USER: eruotolo
+            MYSQL_PASSWORD: Guns026772
+        ports:
+            - "3306:3306"
+        volumes:
+            - ./mysql/mysql-data:/var/lib/mysql
+            - ./mysql/database/lagoenli_lago.sql:/docker-entrypoint-initdb.d/dump_file.sql
+        networks:
+            - my-network
+
+    phpmyadmin:
+        image: phpmyadmin:5.2.1
+        container_name: phpmyadmin-lago
+        ports:
+            - "8080:80"
+        environment:
+            PMA_HOST: mysql
+            PMA_USER: root
+            PMA_PASSWORD: root
+        networks:
+            - my-network
+
+    php:
+        build:
+            context: . # Use the current directory as the build context
+            dockerfile: Dockerfile  # Specify the path to your Dockerfile
+        container_name: php-lago
+        ports:
+            - 9000:9000
+        environment:
+            - DB_HOST=mysql
+            - DB_PORT=3306
+            - DB_DATABASE=lagoenli_lago
+            - DB_USERNAME=eruotolo
+            - DB_PASSWORD=Guns026772
+        volumes:
+            - ./php/php.ini:/usr/local/etc/php/php.ini:ro
+            - ./app/public:/var/www/html/
+        networks:
+            - my-network
+
+    nginx:
+        image: nginx:alpine
+        container_name: nginx-lago
+        ports:
+            - "8081:80"
+        volumes:
+            - ./nginx/conf.d:/etc/nginx/conf.d
+            - ./app/public:/var/www/html/
+        depends_on:
+            - php
+        networks:
+            - my-network
