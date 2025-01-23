@@ -1,0 +1,45 @@
+# Archivos y carpetas del sistema
+.DS_Store
+Thumbs.db
+# Archivos de compilación
+dist/
+build/
+*.o
+*.so
+*.exe
+
+# Configuración personal
+.env
+.idea/
+*.iml
+
+!/app/node_modules/*
+!/app/.idea/*
+!/app/public/admin/api/*
+/app/public/admin/api/*
+!/app/public/admin/library/*
+
+!/app/public/api/
+!/app/public/admin/examples/
+!/app/public/admin/documentation/
+!/app/public/admin/.well-known/
+
+# Ignorar archivos ZIP
+*.zip
+*.tar.gz
+*.iso
+
+# Ignorar archivos de vídeo y audio grandes
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.mp3
+*.wav
+
+# Ignorar archivos ISO y binarios grandes
+*.iso
+*.bin
+
+# Ignorar PDFs grandes (si sueles trabajar con ellos y son muy grandes)
+*.pdf
