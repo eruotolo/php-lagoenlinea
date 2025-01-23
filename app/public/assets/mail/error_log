@@ -1,0 +1,119 @@
+[06-Apr-2022 16:36:21 America/Santiago] PHP Parse error:  syntax error, unexpected '?>', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/lagoenli/public_html/asset/mail/send_mail.php on line 8
+[06-Apr-2022 18:04:58 America/Santiago] PHP Parse error:  syntax error, unexpected '?>', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/lagoenli/public_html/asset/mail/send_mail.php on line 8
+[06-Apr-2022 18:06:12 America/Santiago] PHP Parse error:  syntax error, unexpected '?>', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/lagoenli/public_html/asset/mail/send_mail.php on line 8
+[06-Apr-2022 18:06:40 America/Santiago] PHP Parse error:  syntax error, unexpected '?>', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/lagoenli/public_html/asset/mail/send_mail.php on line 8
+[06-Apr-2022 18:06:52 America/Santiago] PHP Parse error:  syntax error, unexpected '?>', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/lagoenli/public_html/asset/mail/send_mail.php on line 8
+[06-Apr-2022 18:07:18 America/Santiago] PHP Parse error:  syntax error, unexpected '?>', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/lagoenli/public_html/asset/mail/send_mail.php on line 8
+[06-Apr-2022 18:09:11 America/Santiago] PHP Parse error:  syntax error, unexpected '?>', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/lagoenli/public_html/asset/mail/send_mail.php on line 8
+[11-Apr-2022 13:25:31 America/Santiago] PHP Parse error:  syntax error, unexpected '?>', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/lagoenli/public_html/asset/mail/send_mail.php on line 8
+[12-Apr-2022 10:57:48 America/Santiago] PHP Parse error:  syntax error, unexpected '?>', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/lagoenli/public_html/asset/mail/send_mail.php on line 8
+[12-Apr-2022 10:59:59 America/Santiago] PHP Parse error:  syntax error, unexpected '?>', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/lagoenli/public_html/asset/mail/send_mail.php on line 8
+[12-Sep-2022 17:04:41 America/Santiago] PHP Parse error:  syntax error, unexpected '?>', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/lagoenli/public_html/asset/mail/send_mail.php on line 8
+[12-Sep-2022 17:05:17 America/Santiago] PHP Parse error:  syntax error, unexpected '?>', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/lagoenli/public_html/asset/mail/send_mail.php on line 8
+[13-Sep-2022 10:07:00 America/Santiago] PHP Parse error:  syntax error, unexpected '?>', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/lagoenli/public_html/asset/mail/send_mail.php on line 8
+[13-Sep-2022 10:07:46 America/Santiago] PHP Parse error:  syntax error, unexpected '?>', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/lagoenli/public_html/asset/mail/send_mail.php on line 8
+[13-Sep-2022 10:09:59 America/Santiago] PHP Parse error:  syntax error, unexpected '?>', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/lagoenli/public_html/asset/mail/send_mail.php on line 8
+[13-Sep-2022 10:33:26 America/Santiago] PHP Parse error:  syntax error, unexpected '?>', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/lagoenli/public_html/asset/mail/send_mail.php on line 8
+[13-Sep-2022 10:54:44 America/Santiago] PHP Parse error:  syntax error, unexpected '?>', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/lagoenli/public_html/asset/mail/send_mail.php on line 8
+[13-Sep-2022 10:54:55 America/Santiago] PHP Parse error:  syntax error, unexpected '?>', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/lagoenli/public_html/asset/mail/send_mail.php on line 8
+[13-Sep-2022 12:53:28 America/Santiago] PHP Notice:  Undefined index: subasunto in /home/lagoenli/public_html/asset/mail/send_mail.php on line 7
+[13-Sep-2022 12:53:28 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/asset/mail/send_mail.php on line 10
+[13-Sep-2022 12:53:28 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/asset/mail/send_mail.php on line 10
+[13-Sep-2022 12:53:28 America/Santiago] PHP Notice:  Undefined variable: attachment_content in /home/lagoenli/public_html/asset/mail/send_mail.php on line 27
+[13-Sep-2022 12:54:54 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/asset/mail/send_mail.php on line 10
+[13-Sep-2022 12:54:54 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/asset/mail/send_mail.php on line 10
+[13-Sep-2022 12:54:54 America/Santiago] PHP Notice:  Undefined variable: attachment_content in /home/lagoenli/public_html/asset/mail/send_mail.php on line 27
+[13-Sep-2022 12:58:41 America/Santiago] PHP Notice:  Undefined index: subasunto in /home/lagoenli/public_html/asset/mail/send_mail.php on line 7
+[13-Sep-2022 12:58:41 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/asset/mail/send_mail.php on line 10
+[13-Sep-2022 12:58:41 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/asset/mail/send_mail.php on line 10
+[13-Sep-2022 12:58:41 America/Santiago] PHP Notice:  Undefined variable: attachment_content in /home/lagoenli/public_html/asset/mail/send_mail.php on line 27
+[13-Sep-2022 14:28:21 America/Santiago] PHP Notice:  Undefined index: asunto in /home/lagoenli/public_html/asset/mail/send_mail.php on line 3
+[13-Sep-2022 14:28:21 America/Santiago] PHP Notice:  Undefined index: otherField in /home/lagoenli/public_html/asset/mail/send_mail.php on line 3
+[13-Sep-2022 14:28:21 America/Santiago] PHP Notice:  Undefined index: subasunto in /home/lagoenli/public_html/asset/mail/send_mail.php on line 7
+[13-Sep-2022 14:28:21 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/asset/mail/send_mail.php on line 10
+[13-Sep-2022 14:28:21 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/asset/mail/send_mail.php on line 10
+[13-Sep-2022 14:28:21 America/Santiago] PHP Notice:  Undefined variable: attachment_content in /home/lagoenli/public_html/asset/mail/send_mail.php on line 27
+[13-Sep-2022 15:00:14 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/asset/mail/send_mail.php on line 10
+[13-Sep-2022 15:00:14 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/asset/mail/send_mail.php on line 10
+[13-Sep-2022 15:00:14 America/Santiago] PHP Notice:  Undefined variable: attachment_content in /home/lagoenli/public_html/asset/mail/send_mail.php on line 27
+[20-Feb-2023 23:36:29 America/Santiago] PHP Notice:  Undefined index: subasunto in /home/lagoenli/public_html/assets/mail/send_mail.php on line 58
+[20-Feb-2023 23:36:29 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[20-Feb-2023 23:36:29 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[20-Feb-2023 23:58:25 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/assets/mail/send-Gmail.php on line 61
+[20-Feb-2023 23:58:25 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/assets/mail/send-Gmail.php on line 61
+[20-Feb-2023 23:59:29 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/assets/mail/send-Gmail.php on line 61
+[20-Feb-2023 23:59:29 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/assets/mail/send-Gmail.php on line 61
+[21-Feb-2023 00:00:49 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/assets/mail/send-Gmail.php on line 61
+[21-Feb-2023 00:00:49 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/assets/mail/send-Gmail.php on line 61
+[21-Feb-2023 00:02:03 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/assets/mail/send-Gmail.php on line 61
+[21-Feb-2023 00:02:03 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/assets/mail/send-Gmail.php on line 61
+[21-Feb-2023 00:03:14 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/assets/mail/send-Gmail.php on line 61
+[21-Feb-2023 00:03:14 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/assets/mail/send-Gmail.php on line 61
+[21-Feb-2023 00:03:14 America/Santiago] PHP Warning:  Creating default object from empty value in /home/lagoenli/public_html/assets/mail/send-Gmail.php on line 23
+[21-Feb-2023 00:04:59 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/assets/mail/send-Gmail.php on line 61
+[21-Feb-2023 00:04:59 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/assets/mail/send-Gmail.php on line 61
+[21-Feb-2023 00:05:00 America/Santiago] PHP Warning:  Creating default object from empty value in /home/lagoenli/public_html/assets/mail/send-Gmail.php on line 23
+[21-Feb-2023 00:05:30 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/assets/mail/send-Gmail.php on line 61
+[21-Feb-2023 00:05:30 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/assets/mail/send-Gmail.php on line 61
+[21-Feb-2023 00:05:48 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/assets/mail/send-Gmail.php on line 61
+[21-Feb-2023 00:05:48 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/assets/mail/send-Gmail.php on line 61
+[21-Feb-2023 00:08:37 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/assets/mail/send-Gmail.php on line 61
+[21-Feb-2023 00:08:37 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/assets/mail/send-Gmail.php on line 61
+[01-Mar-2023 00:48:29 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/assets/mail/send-Gmail.php on line 61
+[01-Mar-2023 00:48:29 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/assets/mail/send-Gmail.php on line 61
+[01-Mar-2023 00:49:13 America/Santiago] PHP Notice:  Undefined index: fname in /home/lagoenli/public_html/assets/mail/send_mail.php on line 52
+[01-Mar-2023 00:49:13 America/Santiago] PHP Notice:  Undefined index: asunto in /home/lagoenli/public_html/assets/mail/send_mail.php on line 53
+[01-Mar-2023 00:49:13 America/Santiago] PHP Notice:  Undefined index: otherField in /home/lagoenli/public_html/assets/mail/send_mail.php on line 54
+[01-Mar-2023 00:49:13 America/Santiago] PHP Notice:  Undefined index: email in /home/lagoenli/public_html/assets/mail/send_mail.php on line 56
+[01-Mar-2023 00:49:13 America/Santiago] PHP Notice:  Undefined index: comment in /home/lagoenli/public_html/assets/mail/send_mail.php on line 57
+[01-Mar-2023 00:49:13 America/Santiago] PHP Notice:  Undefined index: subasunto in /home/lagoenli/public_html/assets/mail/send_mail.php on line 58
+[01-Mar-2023 00:49:13 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[01-Mar-2023 00:49:13 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[01-Mar-2023 23:50:39 America/Santiago] PHP Notice:  Undefined index: fname in /home/lagoenli/public_html/assets/mail/send_mail.php on line 52
+[01-Mar-2023 23:50:39 America/Santiago] PHP Notice:  Undefined index: asunto in /home/lagoenli/public_html/assets/mail/send_mail.php on line 53
+[01-Mar-2023 23:50:39 America/Santiago] PHP Notice:  Undefined index: otherField in /home/lagoenli/public_html/assets/mail/send_mail.php on line 54
+[01-Mar-2023 23:50:39 America/Santiago] PHP Notice:  Undefined index: email in /home/lagoenli/public_html/assets/mail/send_mail.php on line 56
+[01-Mar-2023 23:50:39 America/Santiago] PHP Notice:  Undefined index: comment in /home/lagoenli/public_html/assets/mail/send_mail.php on line 57
+[01-Mar-2023 23:50:39 America/Santiago] PHP Notice:  Undefined index: subasunto in /home/lagoenli/public_html/assets/mail/send_mail.php on line 58
+[01-Mar-2023 23:50:39 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[01-Mar-2023 23:50:39 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[02-Apr-2023 11:24:46 America/Santiago] PHP Notice:  Undefined index: subasunto in /home/lagoenli/public_html/assets/mail/send_mail.php on line 58
+[02-Apr-2023 11:24:46 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[02-Apr-2023 11:24:46 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[04-Apr-2023 11:39:36 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[04-Apr-2023 11:39:36 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[29-May-2023 03:32:00 America/Santiago] PHP Notice:  Undefined index: subasunto in /home/lagoenli/public_html/assets/mail/send_mail.php on line 58
+[29-May-2023 03:32:00 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[29-May-2023 03:32:00 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[03-Jul-2023 11:26:16 America/Santiago] PHP Notice:  Undefined index: subasunto in /home/lagoenli/public_html/assets/mail/send_mail.php on line 58
+[03-Jul-2023 11:26:16 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[03-Jul-2023 11:26:16 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[25-Jul-2023 00:01:04 America/Santiago] PHP Notice:  Undefined index: subasunto in /home/lagoenli/public_html/assets/mail/send_mail.php on line 58
+[25-Jul-2023 00:01:04 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[25-Jul-2023 00:01:04 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[30-Jul-2023 21:24:09 America/Santiago] PHP Notice:  Undefined index: subasunto in /home/lagoenli/public_html/assets/mail/send_mail.php on line 58
+[30-Jul-2023 21:24:09 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[30-Jul-2023 21:24:09 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[03-Feb-2024 20:44:43 America/Santiago] PHP Notice:  Undefined index: subasunto in /home/lagoenli/public_html/assets/mail/send_mail.php on line 58
+[03-Feb-2024 20:44:43 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[03-Feb-2024 20:44:43 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[08-Apr-2024 19:04:55 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[08-Apr-2024 19:04:55 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[24-Apr-2024 10:21:43 America/Santiago] PHP Notice:  Undefined index: asunto in /home/lagoenli/public_html/assets/mail/send_mail.php on line 53
+[24-Apr-2024 10:21:43 America/Santiago] PHP Notice:  Undefined index: subasunto in /home/lagoenli/public_html/assets/mail/send_mail.php on line 58
+[24-Apr-2024 10:21:43 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[24-Apr-2024 10:21:43 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[29-Apr-2024 19:43:36 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[29-Apr-2024 19:43:36 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[24-May-2024 09:43:05 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[24-May-2024 09:43:05 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[20-Jun-2024 07:27:26 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[20-Jun-2024 07:27:26 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[22-Aug-2024 01:43:52 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[22-Aug-2024 01:43:52 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[26-Sep-2024 15:36:57 America/Santiago] PHP Notice:  Undefined index: subasunto in /home/lagoenli/public_html/assets/mail/send_mail.php on line 58
+[26-Sep-2024 15:36:57 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[26-Sep-2024 15:36:57 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[08-Oct-2024 12:37:00 America/Santiago] PHP Notice:  Undefined index: subasunto in /home/lagoenli/public_html/assets/mail/send_mail.php on line 58
+[08-Oct-2024 12:37:00 America/Santiago] PHP Notice:  Undefined variable: file in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62
+[08-Oct-2024 12:37:00 America/Santiago] PHP Notice:  Undefined variable: filename in /home/lagoenli/public_html/assets/mail/send_mail.php on line 62

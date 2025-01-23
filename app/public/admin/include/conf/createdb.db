@@ -1,0 +1,25 @@
+CREATE TABLE `users` (
+  `user_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nickname` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  `description` varchar(150) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `dateregistered` datetime DEFAULT NULL,
+  `lastlogin` datetime DEFAULT NULL,
+  `referer` int(10) unsigned DEFAULT '0',
+  `source` varchar(300) DEFAULT NULL,
+  `fullname` varchar(100) DEFAULT NULL,
+  `address` varchar(200) DEFAULT NULL,
+  `lat` double DEFAULT NULL,
+  `lng` double DEFAULT NULL,
+  `city` varchar(100) DEFAULT NULL,
+  `state` varchar(100) DEFAULT NULL,
+  `country` varchar(100) DEFAULT NULL,
+  `phone` varchar(100) DEFAULT NULL,
+  `service_radio` int(11) DEFAULT '0',
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=704 DEFAULT CHARSET=latin1;
+
+ALTER TABLE `users` 
+CHANGE COLUMN `source` `firstname` VARCHAR(300) NULL DEFAULT NULL ,
+CHANGE COLUMN `fullname` `lastname` VARCHAR(100) NULL DEFAULT NULL ;

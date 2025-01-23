@@ -1,0 +1,9 @@
+<?php
+	include('Moment.php');
+	include('MomentLocale.php');
+	include('MomentFromVo.php');
+	include('MomentException.php');		
+	include('MomentHelper.php');	
+	include('FormatsInterface.php');	
+	include('MomentPeriodVo.php');
+?>

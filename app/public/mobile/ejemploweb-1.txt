@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lago En Línea</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <!-- Fonts -->
+    <link rel='stylesheet' href='assets/fonts/blogger_fonts.css'>
+    <link rel="preload" href="assets/fonts/BloggerSans.woff2" as="font" type="font/woff2" crossorigin>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Custome CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+<body>
+    <section>
+        <?php include('assets/menumobile.php') ?>
+    </section>
+
+    <section id="contenidos">
+        <div class="container">
+            <div class="row">
+                <!-- DROPDOWN -->
+                <div class="col-12">
+                    
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Ejemplo 1
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item drop-item-1" id="opcion-01" style="cursor: pointer;">Ejemplo 1</a>
+                            <a class="dropdown-item" id="opcion-02" style="cursor: pointer;">Ejemplo 2</a>
+                            <a class="dropdown-item" id="opcion-03" style="cursor: pointer;">Ejemplo 3</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VARIANTES -->
+
+                <div class="col-12 campo-info" id="mostrar-opcion-01">
+                    <div class="col-12 text-center icono-azul">
+                        <img src="" alt="">
+                    </div>
+                    <div class="col-12 subtitulo-azul">
+                        <h4></h4>
+                    </div>
+                    <div class="col-12 texto-azul">
+                        <p></p>
+                    </div>
+                    <div class="col-12 imagen-azul">
+                        <img src="" alt="">
+                    </div>
+                </div>
+
+                <div class="col-12 campo-info" id="mostrar-opcion-02" style="display:none;">
+                    <p>Ejemplo 2</p>
+                </div>
+
+                <div class="col-12 campo-info" id="mostrar-opcion-03" style="display:none;">
+                    <p>Ejemplo 3</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <?php include('assets/menudown.php') ?>
+    </section>
+
+    <!-- Optional JavaScript; choose one -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- Option 3: Other JS -->
+    <script src="assets/js/change.js"></script>
+    
+    <script>
+        $(document).on('click',function(){
+        $('.collapse').collapse('hide');
+        })
+    </script> 
+    
+
+
+</body>

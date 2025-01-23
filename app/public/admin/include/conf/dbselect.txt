@@ -1,0 +1,24 @@
+<?php 
+	error_reporting(0);
+	
+	if ($_SERVER["REMOTE_ADDR"]  == "127.0.0.1" || $_SERVER["REMOTE_ADDR"] == '::1') {
+		$host = 'localhost';
+		$user = 'umpz0k5abrs7f';
+		$password = 'Gandola@7';
+		$txt_db_name = 'dbvsim9hmhqun7';
+		$dbname = $txt_db_name;	
+		
+	} else {
+		$host = 'localhost';
+		$user = 'umpz0k5abrs7f';
+		$password = 'Gandola@7';
+		$txt_db_name = 'dbvsim9hmhqun7';
+		$dbname = $txt_db_name;		
+	}
+	
+
+		$nickname = $_SESSION['username'];		
+		$userloggedid = $_SESSION['userid'];
+		$conn = mysql_connect($host, $user, $password) or die(mysql_error());
+		mysql_select_db($dbname) or die(mysql_error());	
+?>
