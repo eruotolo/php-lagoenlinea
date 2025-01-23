@@ -42,4 +42,5 @@ build/
 *.bin
 
 # Ignorar PDFs grandes (si sueles trabajar con ellos y son muy grandes)
-*.pdf!/app/public/api/clave
+*.pdf
+!/app/public/api/clave
