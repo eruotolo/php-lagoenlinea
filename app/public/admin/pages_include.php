@@ -75,6 +75,21 @@
         } else if ($_GET['section'] == "lagosinhuella-biblioteca-edit") {
             $page = "lagosinhuella-biblioteca-edit.php";
             $title = "Lago sin Huella: Biblioteca";
+        } else if ($_GET['section'] == "lagopuyehue") {
+            $page = "lagopuyehue.php";
+            $title = "Lago Puyehue";
+        } else if ($_GET['section'] == "lagopuyehue-mediciones") {
+            $page = "lagopuyehue-mediciones.php";
+            $title = "Lago Puyehue";
+        } else if ($_GET['section'] == "lagopuyehue-biblioteca") {
+            $page = "lagopuyehue-biblioteca.php";
+            $title = "Lago Puyehue: Biblioteca";
+        } else if ($_GET['section'] == "lagopuyehue-biblioteca-add") {
+            $page = "lagopuyehue-biblioteca-add.php";
+            $title = "Lago Puyehue: Biblioteca";
+        } else if ($_GET['section'] == "lagopuyehue-biblioteca-edit") {
+            $page = "lagopuyehue-biblioteca-edit.php";
+            $title = "Lago Puyehue: Biblioteca";
         }
 
     } else {

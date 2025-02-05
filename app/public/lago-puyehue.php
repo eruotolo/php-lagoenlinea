@@ -294,7 +294,13 @@ include('admin/include/conf/dbselect.php');
             </div>
             <div class="flex items-center justify-center">
                 <select id="puntos" class="bg-white uppercase text-center border border-gray-300 text-gray-900 rounded-[20px] focus:ring-azul focus:border-azul block md:w-[340px] 3xl:w-[380px] mt-[10px] py-[2px] px-[10px] text-black font-light md:text-[20px] 3xl:text-[24px] font-sora">
-                    <!-- ACA VA EL SELECT DE LOS PUNTOS -->
+                    <?php
+                            $sql = "SELECT * FROM puntos_mediciones_lp";
+                            $result = mysql_query($sql);
+                            while ($row = mysql_fetch_assoc($result)) {
+                                echo "<option value='{$row['ID']}'>{$row['Nombre']}</option>";
+                            }
+                    ?> 
                 </select>
             </div>
         </div>
@@ -348,7 +354,7 @@ include('admin/include/conf/dbselect.php');
                         <div class="border-b-[1px] border-azul w-[90%] pl-[8px] pt-[6px]">
                             <h6 class="font-sora font-medium text-[12px] leading-[15px] uppercase">Temperatura</h6>
                         </div>
-                        <div class="font-light md:text-[14px] 3xl:text-[16px] md:leading-[20px] 3xl:leading-[30px] pl-[15px] pt-[5px]" id="">
+                        <div class="font-light md:text-[14px] 3xl:text-[16px] md:leading-[20px] 3xl:leading-[30px] pl-[15px] pt-[5px]" id="temp_html">
                             <!-- Aquí se tiene que cargar el ultimo muestre-->
                             <div style="width: 100%;height: 100%;display: flex;">
 
@@ -363,7 +369,7 @@ include('admin/include/conf/dbselect.php');
                         <div class="border-b-[1px] border-azul w-[90%] pl-[8px] pt-[6px]">
                             <h6 class="font-sora font-medium text-[12px] leading-[15px] ">pH</h6>
                         </div>
-                        <div class="font-light md:text-[14px] 3xl:text-[16px] md:leading-[20px] 3xl:leading-[30px] pl-[15px] pt-[5px]" id="">
+                        <div class="font-light md:text-[14px] 3xl:text-[16px] md:leading-[20px] 3xl:leading-[30px] pl-[15px] pt-[5px]" id="ph_html">
                             <!-- Aquí se tiene que cargar el ultimo muestre-->
                             <div style="width: 100%;height: 100%;display: flex;">
 
@@ -378,7 +384,7 @@ include('admin/include/conf/dbselect.php');
                         <div class="border-b-[1px] border-azul w-[90%] pl-[8px] pt-[6px]">
                             <h6 class="font-sora font-medium text-[12px] leading-[15px] uppercase">Conductividad</h6>
                         </div>
-                        <div class="font-light md:text-[14px] 3xl:text-[16px] md:leading-[20px] 3xl:leading-[30px] pl-[15px] pt-[5px]" id="">
+                        <div class="font-light md:text-[14px] 3xl:text-[16px] md:leading-[20px] 3xl:leading-[30px] pl-[15px] pt-[5px]" id="conductividad_html">
                             <!-- Aquí se tiene que cargar el ultimo muestre-->
                             <div style="width: 100%;height: 100%;display: flex;">
                                 <img id='loader-label' src='assets/img/loading.gif' style='width:20px;margin: auto;'>
@@ -438,6 +444,342 @@ include('admin/include/conf/dbselect.php');
 
     // Mostrar por defecto el primer tab
     document.getElementById('tab1').click();
+</script>
+<script>
+    var map;
+    function initMap() {
+        <?php
+        $sql = "SELECT * FROM ubicacion_lp";
+        $result = mysql_query($sql);
+        while ($row = mysql_fetch_assoc($result)) {
+            $Lng = $row['Lng'];
+            $Lat = $row['Lat'];
+        }
+        $StadiumLat = $Lat;
+        $StadiumLng = $Lng;
+        if ($StadiumLat <> 0 && $StadiumLng <> 0) {
+        ?>
+        var myLatLng = {
+            lat: <?php echo $StadiumLat ?>,
+            lng: <?php echo $StadiumLng ?>
+        };
+        var myzoom = 14.89;
+        <?php
+        } else {
+        ?>
+        var myLatLng = {
+            lat: -41.3190811,
+            lng: -72.9661163
+        };
+        var myzoom = 8;
+        <?php
+        }
+        ?>
+        map = new google.maps.Map(document.getElementById('google-map-div'), {
+            center: myLatLng,
+            zoom: myzoom
+        });
+        <?php
+        if ($StadiumLat <> 0 && $StadiumLng <> 0) {
+        ?>
+        var marker = new google.maps.Marker({
+            animation: google.maps.Animation.DROP,
+            position: myLatLng,
+            draggable: false,
+            map: map,
+            icon: {
+                url: "assets/img/icono-boya.svg",
+                scaledSize: new google.maps.Size(39, 72)
+            },
+        });
+        <?php
+        } else {
+        ?>
+        var marker = new google.maps.Marker({
+            animation: google.maps.Animation.DROP,
+            draggable: true,
+            map: map,
+        });
+        <?php
+        }
+        ?>
+
+<?php
+        $sql = "SELECT * FROM puntos_mediciones_lp";
+        $result = mysql_query($sql);
+		$i = 0;
+        while ($row = mysql_fetch_assoc($result)) {
+			$i = $row['ID'];
+			echo "var html = \"<a id=''>{$row['Nombre']}</a>\";";
+			echo "var location = new google.maps.LatLng({$row['Lat']}, {$row['Lng']});";
+			echo "var marker$i = new google.maps.Marker({";
+			echo "draggable: false,";
+			echo "map: map,";
+			echo "position: location";
+			echo "});";
+			
+			echo "var infowindow$i = new google.maps.InfoWindow({";
+			echo "content: html";
+			echo "});";
+
+			echo "google.maps.event.addListener(marker$i, 'mouseover', function() {";
+			echo "infowindow$i.open(map, this);";
+			echo "});";		
+			
+			echo "google.maps.event.addListener(marker$i, 'mouseout', function() {";
+			echo "infowindow$i.close(map, this);";
+			echo "});";		
+
+			echo "google.maps.event.addListener(marker$i, 'click', function() {";
+			echo "document.getElementById('charthere').scrollIntoView();";
+			echo "document.querySelector('#puntos').value = '$i';";
+			echo "createGraph(from,to, $i, '{$row['Nombre']}');";
+			echo "});";				
+
+        }
+?>
+
+        function placeMarker(location) {
+            marker.setPosition(location)
+            $('#StadiumLat').val(location.lat().toFixed(7));
+            $('#StadiumLng').val(location.lng().toFixed(7));
+        }
+
+        // Create the search box and link it to the UI element.
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function() {
+            searchBox.setBounds(map.getBounds());
+        });
+
+        google.maps.event.addListener(searchBox, 'places_changed', function() {
+            searchBox.set('map', null);
+
+
+            var places = searchBox.getPlaces();
+
+            var bounds = new google.maps.LatLngBounds();
+            var i, place;
+            for (i = 0; place = places[i]; i++) {
+                (function(place) {
+                    marker.setPosition(place.geometry.location)
+                    $('#StadiumLat').val(place.geometry.location.lat().toFixed(7));
+                    $('#StadiumLng').val(place.geometry.location.lng().toFixed(7));
+                    bounds.extend(place.geometry.location);
+                }(place));
+
+            }
+            map.fitBounds(bounds);
+            searchBox.set('map', map);
+            map.setZoom(Math.min(map.getZoom(), 12));
+
+        });
+
+    }
+</script>
+
+<script type="text/javascript">
+	var datetoday = new Date();
+	var puntoid;
+	if (datetoday.getMonth()+1 < 10) {
+		var month = "0" + datetoday.getMonth()+1;
+	} else {
+		var month = datetoday.getMonth()+1;
+	}
+	var datetodayFormat = datetoday.getFullYear() + "-" + (datetoday.getMonth()+1) + "-" + datetoday.getDate();
+	
+	var dateoneyearago = new Date(new Date().setFullYear(new Date().getFullYear() - 1));
+	if (dateoneyearago.getMonth()+1 < 10) {
+		var month = "0" + dateoneyearago.getMonth()+1;
+	} else {
+		var month = dateoneyearago.getMonth()+1;
+	}	
+	var dateoneyearagoFormat = dateoneyearago.getFullYear() + "-" + (dateoneyearago.getMonth()+1) + "-" + dateoneyearago.getDate();
+	
+	var from = dateoneyearagoFormat;
+	var to = datetodayFormat;
+	puntoid = 2;
+	$('#puntos').val(puntoid);
+	createGraph(from,to, puntoid, '');
+	
+	
+	$('#puntos').change(function () {
+		puntoid = $(this).val();
+		createGraph(from,to, puntoid, '');
+	});
+	
+	$('#customp').click(function () {
+		$('#datefilter').show();
+	});
+	
+	$('#filtrarfecha').click(function () {
+		from = $('#startDate').val();
+		to = $('#endDate').val();
+		if (from != null && from != '' && to != null && to != '') {
+			if (from > to) {
+				alert("La fecha Desde debe ser menor o igual a la fecha Hasta");
+			} else {
+				createGraph(from,to, puntoid, '');
+			}
+		} else {
+			alert("Debes especificar Fecha Desde y Fecha Hasta");
+		}
+	})
+	
+	
+	function createGraph(since, to, sensor,name) {
+
+		$.ajax({
+			type: "POST",
+			url: "api/getMediciones_lp.php",
+			cache: false,
+			data: {
+				since: since,
+				to: to,
+				sensor: sensor
+			},
+			success: function(output) {
+				console.log(output);
+				try {
+					var data = JSON.parse(output);
+					drawChart(data);
+					$('#loader-label').hide();
+					$('#coli-value').show();	
+					if (data.muestras_last != null) {
+						$('#coli-value').html(data.muestras_last + "  mg/l" + "<br><small>Fecha: " + data.muestras_last_fecha + "</small>");					
+						$('#temp_html').html(data.temperatura_last + "  °C" + "<br><small>Fecha: " + data.muestras_last_fecha + "</small>");					
+						$('#ph_html').html(data.ph_last + "  " + "<br><small>Fecha: " + data.muestras_last_fecha + "</small>");					
+						$('#conductividad_html').html(data.conductividad_last + "  µS/cm" + "<br><small>Fecha: " + data.muestras_last_fecha + "</small>");					
+					} else {
+						$('#coli-value').html('No hay informacion');
+					}
+				} catch (e) {
+					console.log(e);
+				}
+			},
+			error: function(output, e, f) {
+				console.log(e);
+			}
+		});		
+	}	
+	
+	function drawChart(data) {
+        am4core.ready(function() {
+
+            // Themes begin
+            am4core.useTheme(am4themes_animated);
+            // Themes end
+
+            // Create chart instance
+            var chart = am4core.create("chartdiv1", am4charts.XYChart);
+            //
+			chart.language.locale = am4lang_es_ES;
+            // Increase contrast by taking evey second color
+            chart.colors.step = 2;
+
+            // Add data
+            chart.data = generateChartData(data);
+            $('#chartdiv1').show();
+			
+            $('#loader').hide();
+
+            // Create axes
+            var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+            dateAxis.renderer.minGridDistance = 50;
+
+            // Create series
+            function createAxisAndSeries(field, field2, name, opposite, bullet) {
+                var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+                if (chart.yAxes.indexOf(valueAxis) != 0) {
+                    valueAxis.syncWithAxis = chart.yAxes.getIndex(0);
+                }
+
+                var series = chart.series.push(new am4charts.LineSeries());
+                series.dataFields.valueY = field;
+                series.dataFields.dateX = "date";
+                series.strokeWidth = 1.5;
+                series.yAxis = valueAxis;
+                series.name = name;
+                series.tooltipText = "{name}: [bold]{valueY}[/]";
+                series.tensionX = 0.8;
+                series.showOnInit = true;             
+				
+                // var series2 = chart.series.push(new am4charts.LineSeries());
+                // series2.dataFields.valueY = field2;
+                // series2.dataFields.dateX = "date";
+                // series2.strokeWidth = 1.5;
+                // series2.yAxis = valueAxis;
+                // series2.name = "UMBRAL 1.000 NMP/100 ml";
+                // series2.tooltipText = "{name}: [bold]{valueY}[/]";
+                // series2.tensionX = 0.8;
+                // series2.showOnInit = true;			                
+
+                var interfaceColors = new am4core.InterfaceColorSet();
+
+                valueAxis.renderer.line.strokeOpacity = 1;
+                valueAxis.renderer.line.strokeWidth = 2;
+                valueAxis.renderer.line.stroke = series.stroke;
+                valueAxis.renderer.labels.template.fill = series.stroke;
+                valueAxis.renderer.opposite = opposite;
+				
+				var bullet = series.bullets.push(new am4charts.CircleBullet());
+				bullet.circle.stroke = interfaceColors.getFor("background");
+				bullet.circle.strokeWidth = 2;				  
+            }
+
+            createAxisAndSeries("values_chart", "values_const_chart", "OXIGENO", false, "circle");
+            createAxisAndSeries("temp_chart", "values_const_chart", "TEMPERATURA", false, "circle");
+            createAxisAndSeries("ph_chart", "values_const_chart", "pH", false, "circle");
+            createAxisAndSeries("cond_chart", "values_const_chart", "CONDUCTIVIDAD", false, "circle");
+			
+            // Add legend
+            chart.legend = new am4charts.Legend();
+
+            // Add cursor
+            chart.cursor = new am4charts.XYCursor();
+
+            // generate some random data, quite different range
+			
+            function generateChartData(data) {
+				console.log("Muestras",data);
+                var chartData = [];
+
+                var months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Set', 'Oct', 'Nov', 'Dic'];
+				try {
+					data.label.forEach(function(e, i) {
+						chartData.push({
+							date: e,
+							values_chart: data.muestras[i],
+							//values_const_chart: data.muestras_constant[i],
+						});		
+						chartData.push({
+							date: e,
+							temp_chart: data.temperatura[i],
+							//values_const_chart: data.muestras_constant[i],
+						});	  
+						chartData.push({
+							date: e,
+							cond_chart: data.conductividad[i],
+							//values_const_chart: data.muestras_constant[i],
+						});          
+						chartData.push({
+							date: e,
+							ph_chart: data.ph[i],
+							//values_const_chart: data.muestras_constant[i],
+						});                                                              				
+					});
+				} catch (e) {
+					alert("No hay datos para el sensor seleccionado");
+				}
+                return chartData;
+            }
+        }); // end am4core.ready()		
+		
+		
+	}
 </script>
 
 

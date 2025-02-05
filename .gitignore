@@ -44,3 +44,5 @@ build/
 # Ignorar PDFs grandes (si sueles trabajar con ellos y son muy grandes)
 *.pdf
 !/app/public/api/clave
+/app/public/api/incidents_images
+/mysql
