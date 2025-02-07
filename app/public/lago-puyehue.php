@@ -694,10 +694,10 @@ include('admin/include/conf/dbselect.php');
         } else {
         ?>
         var myLatLng = {
-            lat: -41.3190811,
-            lng: -72.9661163
+            lat: -40.67989,
+            lng: -72.48458
         };
-        var myzoom = 8;
+        var myzoom = 12;
         <?php
         }
         ?>
@@ -760,9 +760,10 @@ include('admin/include/conf/dbselect.php');
 			echo "document.getElementById('charthere').scrollIntoView();";
 			echo "document.querySelector('#puntos').value = '$i';";
 			echo "createGraph(from,to, $i, '{$row['Nombre']}');";
-			echo "});";				
-
+			echo "});";			
+            
         }
+        
 ?>
 
         function placeMarker(location) {
@@ -795,6 +796,7 @@ include('admin/include/conf/dbselect.php');
                     $('#StadiumLat').val(place.geometry.location.lat().toFixed(7));
                     $('#StadiumLng').val(place.geometry.location.lng().toFixed(7));
                     bounds.extend(place.geometry.location);
+                    
                 }(place));
 
             }
