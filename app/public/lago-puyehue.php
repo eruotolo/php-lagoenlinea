@@ -407,6 +407,232 @@ include('admin/include/conf/dbselect.php');
             <a id='exportexcel' class="font-sora font-bold md:text-[14px] md:leading-[14px] 3xl:text-[16px] 3xl:leading-[16px] border-[1px] border-amarillo bg-amarillo px-[40px] py-[10px] rounded-[20px] mx-[16px] hover:bg-white" href="#">DESCARGAR BASE DE DATOS</a><!--ACA DESCAR EL ARCHIVO EXCEL-->
         </div>
     </div>
+	<table id='table' style='display:none'>
+	<?php
+		$sql = "SET lc_time_names = 'es_ES';";
+        $result = mysql_query($sql);	
+		
+		$sql = "SELECT CONCAT(YEAR(Fecha),'-',MONTH(Fecha)) as 'month' ,DATE_FORMAT(`Fecha`,'%Y - %M') as 'monthname'
+				FROM puntos_muestras_lp
+				group by CONCAT(YEAR(Fecha),'-',MONTH(Fecha)),DATE_FORMAT(`Fecha`,'%Y - %M')
+				order by Fecha";
+        $result = mysql_query($sql);
+		$months = array();
+
+        while ($row = mysql_fetch_assoc($result)) {
+			$m = $row['month'];
+			$months[$m] = $row['monthname'];
+		}
+		
+		$mediciones = array();
+		$sql = "SELECT *, CONCAT(YEAR(Fecha),'-',MONTH(Fecha)) as 'month'
+				FROM puntos_muestras_lp";
+        $result = mysql_query($sql);
+        while ($row = mysql_fetch_assoc($result)) {
+			$PuntoID = $row['PuntoID'];
+			$month = $row['month'];
+			$mediciones[$PuntoID][$month] = $row['oxigeno'];
+		}
+		
+		$puntos = array();
+		$sql = "SELECT * FROM puntos_mediciones_lp";
+        $result = mysql_query($sql);
+        while ($row = mysql_fetch_assoc($result)) {
+			$ID = $row['ID'];
+			$Nombre = $row['Nombre'];
+			$puntos[$ID] = $Nombre;
+		}	
+		echo "<tr>";
+		echo "<td><b>Monitoreo Lago Puyehue: </b></td>";
+		echo "</tr>";
+		echo "<tr>";
+		echo "<td><b>Indicador: Oxígeno disuelto (mg/l)</b></td>";
+		echo "</tr>";		
+		echo "<tr>";
+		echo "<td><b>Estacion</b></td>";
+		foreach ($months as $key1=>$month) {
+			echo "<td><b>{$month}</b></td>";
+		}		
+		echo "</tr>";
+		
+		foreach ($puntos as $key=>$punto) {
+			echo "<tr>";
+			echo "<td>{$punto}</td>";
+			foreach ($months as $key1=>$month) {				
+				echo "<td>{$mediciones[$key][$key1]}</td>";
+			}
+			echo "</tr>";
+		}
+	?>
+	<?php
+		$sql = "SET lc_time_names = 'es_ES';";
+        $result = mysql_query($sql);	
+		
+		$sql = "SELECT CONCAT(YEAR(Fecha),'-',MONTH(Fecha)) as 'month' ,DATE_FORMAT(`Fecha`,'%Y - %M') as 'monthname'
+				FROM puntos_muestras_lp
+				group by CONCAT(YEAR(Fecha),'-',MONTH(Fecha)),DATE_FORMAT(`Fecha`,'%Y - %M')
+				order by Fecha";
+        $result = mysql_query($sql);
+		$months = array();
+
+        while ($row = mysql_fetch_assoc($result)) {
+			$m = $row['month'];
+			$months[$m] = $row['monthname'];
+		}
+		
+		$mediciones = array();
+		$sql = "SELECT *, CONCAT(YEAR(Fecha),'-',MONTH(Fecha)) as 'month'
+				FROM puntos_muestras_lp";
+        $result = mysql_query($sql);
+        while ($row = mysql_fetch_assoc($result)) {
+			$PuntoID = $row['PuntoID'];
+			$month = $row['month'];
+			$mediciones[$PuntoID][$month] = $row['temperatura'];
+		}
+		
+		$puntos = array();
+		$sql = "SELECT * FROM puntos_mediciones_lp";
+        $result = mysql_query($sql);
+        while ($row = mysql_fetch_assoc($result)) {
+			$ID = $row['ID'];
+			$Nombre = $row['Nombre'];
+			$puntos[$ID] = $Nombre;
+		}	
+		echo "<tr>";
+		echo "<td>&nbsp;</td>";
+		echo "</tr>";
+		echo "<tr>";
+		echo "<td><b>Indicador: Temperatura (°C)</b></td>";
+		echo "</tr>";		
+		echo "<tr>";
+		echo "<td><b>Estacion</b></td>";
+		foreach ($months as $key1=>$month) {
+			echo "<td><b>{$month}</b></td>";
+		}		
+		echo "</tr>";
+		
+		foreach ($puntos as $key=>$punto) {
+			echo "<tr>";
+			echo "<td>{$punto}</td>";
+			foreach ($months as $key1=>$month) {				
+				echo "<td>{$mediciones[$key][$key1]}</td>";
+			}
+			echo "</tr>";
+		}
+	?>    
+	<?php
+		$sql = "SET lc_time_names = 'es_ES';";
+        $result = mysql_query($sql);	
+		
+		$sql = "SELECT CONCAT(YEAR(Fecha),'-',MONTH(Fecha)) as 'month' ,DATE_FORMAT(`Fecha`,'%Y - %M') as 'monthname'
+				FROM puntos_muestras_lp
+				group by CONCAT(YEAR(Fecha),'-',MONTH(Fecha)),DATE_FORMAT(`Fecha`,'%Y - %M')
+				order by Fecha";
+        $result = mysql_query($sql);
+		$months = array();
+
+        while ($row = mysql_fetch_assoc($result)) {
+			$m = $row['month'];
+			$months[$m] = $row['monthname'];
+		}
+		
+		$mediciones = array();
+		$sql = "SELECT *, CONCAT(YEAR(Fecha),'-',MONTH(Fecha)) as 'month'
+				FROM puntos_muestras_lp";
+        $result = mysql_query($sql);
+        while ($row = mysql_fetch_assoc($result)) {
+			$PuntoID = $row['PuntoID'];
+			$month = $row['month'];
+			$mediciones[$PuntoID][$month] = $row['ph'];
+		}
+		
+		$puntos = array();
+		$sql = "SELECT * FROM puntos_mediciones_lp";
+        $result = mysql_query($sql);
+        while ($row = mysql_fetch_assoc($result)) {
+			$ID = $row['ID'];
+			$Nombre = $row['Nombre'];
+			$puntos[$ID] = $Nombre;
+		}	
+		echo "<tr>";
+		echo "<td>&nbsp;</td>";
+		echo "</tr>";
+		echo "<tr>";
+		echo "<td><b>Indicador: pH</b></td>";
+		echo "</tr>";		
+		echo "<tr>";
+		echo "<td><b>Estacion</b></td>";
+		foreach ($months as $key1=>$month) {
+			echo "<td><b>{$month}</b></td>";
+		}		
+		echo "</tr>";
+		
+		foreach ($puntos as $key=>$punto) {
+			echo "<tr>";
+			echo "<td>{$punto}</td>";
+			foreach ($months as $key1=>$month) {				
+				echo "<td>{$mediciones[$key][$key1]}</td>";
+			}
+			echo "</tr>";
+		}
+	?>   
+	<?php
+		$sql = "SET lc_time_names = 'es_ES';";
+        $result = mysql_query($sql);	
+		
+		$sql = "SELECT CONCAT(YEAR(Fecha),'-',MONTH(Fecha)) as 'month' ,DATE_FORMAT(`Fecha`,'%Y - %M') as 'monthname'
+				FROM puntos_muestras_lp
+				group by CONCAT(YEAR(Fecha),'-',MONTH(Fecha)),DATE_FORMAT(`Fecha`,'%Y - %M')
+				order by Fecha";
+        $result = mysql_query($sql);
+		$months = array();
+
+        while ($row = mysql_fetch_assoc($result)) {
+			$m = $row['month'];
+			$months[$m] = $row['monthname'];
+		}
+		
+		$mediciones = array();
+		$sql = "SELECT *, CONCAT(YEAR(Fecha),'-',MONTH(Fecha)) as 'month'
+				FROM puntos_muestras_lp";
+        $result = mysql_query($sql);
+        while ($row = mysql_fetch_assoc($result)) {
+			$PuntoID = $row['PuntoID'];
+			$month = $row['month'];
+			$mediciones[$PuntoID][$month] = $row['conductividad'];
+		}
+		
+		$puntos = array();
+		$sql = "SELECT * FROM puntos_mediciones_lp";
+        $result = mysql_query($sql);
+        while ($row = mysql_fetch_assoc($result)) {
+			$ID = $row['ID'];
+			$Nombre = $row['Nombre'];
+			$puntos[$ID] = $Nombre;
+		}	
+		echo "<tr>";
+		echo "<td>&nbsp;</td>";
+		echo "</tr>";
+		echo "<tr>";
+		echo "<td><b>Indicador: Conductividad (µS/cm)</b></td>";
+		echo "</tr>";		
+		echo "<tr>";
+		echo "<td><b>Estacion</b></td>";
+		foreach ($months as $key1=>$month) {
+			echo "<td><b>{$month}</b></td>";
+		}		
+		echo "</tr>";
+		
+		foreach ($puntos as $key=>$punto) {
+			echo "<tr>";
+			echo "<td>{$punto}</td>";
+			foreach ($months as $key1=>$month) {				
+				echo "<td>{$mediciones[$key][$key1]}</td>";
+			}
+			echo "</tr>";
+		}
+	?>       
+	</table>    
 
 </main>
 
@@ -772,7 +998,7 @@ include('admin/include/conf/dbselect.php');
 						});                                                              				
 					});
 				} catch (e) {
-					alert("No hay datos para el sensor seleccionado");
+					//alert("No hay datos para el sensor seleccionado");
 				}
                 return chartData;
             }
@@ -781,7 +1007,21 @@ include('admin/include/conf/dbselect.php');
 		
 	}
 </script>
-
+<script src="assets/js/exportexcel/excelexportjs.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#backtomap').click(function () {
+		document.getElementById('puntos-monitoreo').scrollIntoView();
+	})
+	
+	$('#exportexcel').on('click', function() {
+		$("#table").excelexportjs({
+			containerid: "table",
+			datatype: 'table'
+		});
+	});	
+});
+</script>
 
 </body>
 </html>
