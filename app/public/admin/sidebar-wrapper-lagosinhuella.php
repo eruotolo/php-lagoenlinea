@@ -56,5 +56,23 @@
     	                </ul>
     	            </div>
     	        </li>
+    	        <li>
+    	            <a data-toggle="collapse" href="#lpy">
+    	                <i class="pe-7s-global"></i>
+    	                <p>Lago Puyehue
+    	                    <b class="caret"></b>
+    	                </p>
+    	            </a>
+    	            <div class="collapse" id="lpy">
+    	                <ul class="nav">
+    	                    <li>
+    	                        <a href="index.php?userid=<?php echo $userid ?>&section=lagopuyehue">
+    	                            <span class="sidebar-mini">&nbsp;</span>
+    	                            <span class="sidebar-normal">Puntos de Muestreo</span>
+    	                        </a>
+    	                    </li>
+    	                </ul>
+    	            </div>
+    	        </li>				
     	    </ul>
     	</div>
