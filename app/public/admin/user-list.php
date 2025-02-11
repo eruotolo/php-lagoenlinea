@@ -1,4 +1,9 @@
-            <div class="container-fluid">
+<style>
+	.pointer {
+		cursor: pointer;
+	}
+</style>            
+			<div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card ">
@@ -32,19 +37,24 @@
 												$result=mysql_query($sql);
 												while ($row = mysql_fetch_assoc($result)) {
 														if ($row['admin'] == 1) {
-															$iconadmin = "<i class='fa fa-star text-warning makeadmin' admin='{$row['admin']}' valid='{$row['user_id']}' rel='tooltip' title='$lng_unmake_admin'></i>";
+															$iconadmin = "<i class='fa fa-star text-warning makeadmin pointer' admin='{$row['admin']}' valid='{$row['user_id']}' rel='tooltip' title='$lng_unmake_admin'></i>";
 														} else {
-															$iconadmin = "<i class='fa fa-star-o text-warning makeadmin' admin='{$row['admin']}' valid='{$row['user_id']}' rel='tooltip' title='$lng_make_admin'></i>";
+															$iconadmin = "<i class='fa fa-star-o text-warning makeadmin pointer' admin='{$row['admin']}' valid='{$row['user_id']}' rel='tooltip' title='$lng_make_admin'></i>";
 														}
 														if ($row['onlymuestras'] == 1) {
-															$icononlymuestra = "<i class='fa fa-vcard text-warning makeonlymuestra' onlymuestra='{$row['onlymuestras']}' valid='{$row['user_id']}' rel='tooltip' title='Usuario: LagoSinHuella'></i>";
+															$icononlymuestra = "<i class='fa fa-vcard text-warning makeonlymuestra pointer' onlymuestra='{$row['onlymuestras']}' valid='{$row['user_id']}' rel='tooltip' title='Usuario: LagoSinHuella'></i>";
 														} else {
-															$icononlymuestra = "<i class='fa fa-vcard-o text-warning makeonlymuestra' onlymuestra='{$row['onlymuestras']}' valid='{$row['user_id']}' rel='tooltip' title='Usuario: LagoSinHuella'></i>";
-														}														
+															$icononlymuestra = "<i class='fa fa-vcard-o text-warning makeonlymuestra pointer' onlymuestra='{$row['onlymuestras']}' valid='{$row['user_id']}' rel='tooltip' title='Usuario: LagoSinHuella'></i>";
+														}
+														if ($row['onlymuestras'] == 2) {
+															$icononlymuestra2 = "<i class='fa fa-id-card text-warning makeonlymuestra pointer' onlymuestra='{$row['onlymuestras']}' valid='{$row['user_id']}' rel='tooltip' title='Usuario: LagoPuyehue'></i>";
+														} else {
+															$icononlymuestra2 = "<i class='fa fa-id-card-o text-warning makeonlymuestra2 pointer' onlymuestra='{$row['onlymuestras']}' valid='{$row['user_id']}' rel='tooltip' title='Usuario: LagoPuyehue'></i>";
+														}																												
 													echo "<tr>
 																<td></td>
 																<td>{$row['user_id']}</td>
-																<td>$iconadmin {$icononlymuestra}</td>
+																<td>$iconadmin {$icononlymuestra} {$icononlymuestra2}</td>
 																<td>{$row['firstname']} {$row['lastname']}</td>
 																<td>{$row['email']}</td>
 																<td>{$row['lastlogin']}</td>
@@ -293,13 +303,13 @@
 			});
 			$(".makeonlymuestra").click(function() {
 					var i = $(this);
-					if ($(this).attr('onlymuestra') == 0) {
+					if ($(this).attr('onlymuestra') == 0 || $(this).attr('onlymuestra') == 2) {
 						$.ajax({
 						type: "POST",
 						url: "jquery/makeonlymuestra.php",
 						data: {id: $(this).attr('valid'), userid: 1},
 						cache: false,
-						success: function(output){						
+						success: function(output){					
 							i.removeClass("fa-vcard-o");
 							i.addClass("fa-vcard");
 							i.attr('onlymuestra',1);
@@ -321,6 +331,38 @@
 						});						
 					}
 					
-			});			
+			});	
+			$(".makeonlymuestra2").click(function() {
+					var i = $(this);
+					if ($(this).attr('onlymuestra') == 0 || $(this).attr('onlymuestra') == 1) {
+						$.ajax({
+						type: "POST",
+						url: "jquery/makeonlymuestra2.php",
+						data: {id: $(this).attr('valid'), userid: 1},
+						cache: false,
+						success: function(output){		
+
+							i.removeClass("fa-vcard-o");
+							i.addClass("fa-vcard");
+							i.attr('onlymuestra2',1);
+							location.reload();
+						}
+						});
+					} else {
+						$.ajax({
+						type: "POST",
+						url: "jquery/unmakeonlymuestra2.php",
+						data: {id: $(this).attr('valid'), userid: 1},
+						cache: false,
+						success: function(output){
+							i.removeClass("fa-vcard");
+							i.addClass("fa-vcard-o");
+							i.attr('onlymuestra2',0);
+							location.reload();							
+						}
+						});						
+					}
+					
+			});					
 	});
     </script>			

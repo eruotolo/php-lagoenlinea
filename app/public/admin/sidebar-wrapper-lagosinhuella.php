@@ -32,6 +32,9 @@
     	    </div>
 
     	    <ul class="nav">
+			<?php 
+				if ($onlymuestras == 1) {		
+			?>		
     	        <li>
     	            <a data-toggle="collapse" href="#lsh">
     	                <i class="pe-7s-global"></i>
@@ -56,6 +59,9 @@
     	                </ul>
     	            </div>
     	        </li>
+			<?php
+				} else if ($onlymuestras == 2) {		
+			?>
     	        <li>
     	            <a data-toggle="collapse" href="#lpy">
     	                <i class="pe-7s-global"></i>
@@ -73,6 +79,9 @@
     	                    </li>
     	                </ul>
     	            </div>
-    	        </li>				
+    	        </li>	
+			<?php
+				}
+			?>
     	    </ul>
     	</div>
